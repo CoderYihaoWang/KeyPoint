@@ -18,7 +18,7 @@
             </div>
             <div class="form-group was-validated">
                 <input class="form-control" type="password" name="password" id="password" placeholder="password" required maxlength="16" minlength="8">
-                <div class="invalid-feedback">* Your password is too short</div>
+                <div class="invalid-feedback">* Your password must be 8 - 16 digits</div>
             </div>
             <div class="form-group was-validated">
                 <input class="form-control" type="password" name="password" id="repeatPassword" placeholder="repeat password"

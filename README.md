@@ -13,7 +13,7 @@ https://trex-sandwich.com/taz_KeyPoint/
 
 #### Extra Features
 - Nested comments (in "article" page)
-  - nested up to 2 levels.
+  - nested up to 3 levels.
   - auto indented in accordance with their levels. 
   - arranged in chronological order (later goes upper).
   - user can choose to show or hide comments block.
@@ -28,10 +28,14 @@ https://trex-sandwich.com/taz_KeyPoint/
 - Like articles and comments
   - liked articles are gathered in "I liked" page.
   - likes show the popularity of articles and comments besides them.
-  
+- Tags
+  - attach tags to articles
+  - browse articles with a certain tag
   
 #### On setup
-- nothing needs to be done.
+- If you choose to deploy the project yourself, rather than user the already deployed version, run /scripts/initSchema.sql first
+- If you run initSchema.sql BEFORE the presentation date, please contact one of our group members, as we need to add sample data for presentation
 
 #### Accounts for testing and evaluation
-- username: Kalvin, password: kkkkkkkk
+- Test account - username: Kalvin, password: kkkkkkkk
+- Database account: user=taz, password=PutsTheTazInTazmania

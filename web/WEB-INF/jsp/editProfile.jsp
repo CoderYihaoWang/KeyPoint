@@ -31,18 +31,18 @@
                 const userName = document.getElementById("userName").value;
                 if (!/^[a-zA-Z0-9]+$/.test(userName) && userName.length > 0) {
                     document.getElementById("invalidUserName").classList.remove("d-none");
-                    document.getElementById("signUp").disabled = true;
+                    document.getElementById("save").disabled = true;
                 } else {
                     document.getElementById("invalidUserName").classList.add("d-none");
-                    document.getElementById("signUp").disabled = false;
+                    document.getElementById("save").disabled = false;
                 }
                 const result = await validateUserName(userName, originalUserName);
                 if (!result) {
                     document.getElementById("takenName").classList.remove("d-none");
-                    document.getElementById("signUp").disabled = true;
+                    document.getElementById("save").disabled = true;
                 } else {
                     document.getElementById("takenName").classList.add("d-none");
-                    document.getElementById("signUp").disabled = false;
+                    document.getElementById("save").disabled = false;
                 }
             });
 
@@ -234,7 +234,7 @@
 
 
         <form id="deleteForm" action="./deleteAccount" method="post" class="pl-3 mx-0 d-flex align-content-center">
-            <button type="submit" form="profileForm" class="btn btn-primary mr-2 px-3 btn-sm" id="save">Save</button>
+            <button id="save" type="submit" form="profileForm" class="btn btn-primary mr-2 px-3 btn-sm" id="save">Save</button>
             <input type="hidden" name="userName" value="${user.userName}">
             <button type="button" class="btn btn-danger mr-2 px-3 btn-sm" data-toggle="modal"
                     data-target="#modalDeleteAccount">Delete Account

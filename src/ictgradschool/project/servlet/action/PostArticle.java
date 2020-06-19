@@ -70,6 +70,11 @@ public class PostArticle extends FileUploadBase {
         if (newCover == null || newCover.isEmpty()) {
             article.setCover(originalCover);
         }
+
+        if (article.getTitle() == null || article.getTitle().isEmpty() || article.getTitle().isBlank()) {
+            article.setTitle(article.getUser().getNickname() + "'s Article");
+        }
+
         try {
             ArticleDAO.insertOrEditArticle(article);
         } catch (SQLException e) {

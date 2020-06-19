@@ -41,14 +41,26 @@ This file is used to keep record of what has been done each day
 ### 12/6, Fri
 - Add file upload functionality
 - Add error pages
-- made sure the app is runable
+- made sure the app is runnable
 
 ### 13/6 - 14/6, weekend
 - refactored code
 - refined pages
 
 ### 15/6, Mon
+- add basic bootstrap styles to pages
+- add like, follow and tags
+
 ### 16/6, Tue
+- add custom styles to pages
+
 ### 17/6, Wed
+- add WYSIWYG editor
+
 ### 18/6, Thu
+- testing
+- fix bugs
+
 ### 19/6, Fri
+- testing
+- fix bugs

@@ -6,7 +6,6 @@
     <script src="./assets/js/validateUserName.js"></script>
 </head>
 <body>
-<div>
     <div class="container-lg">
         <h2 class="title">Sign Up</h2>
         <div id="contentBox" class="container-sm my-5 card py-5" style="max-width: 400px">
@@ -15,10 +14,11 @@
                 <input class="form-control" type="text" name="userName" id="userName" placeholder="username" required maxlength="16" minlength="1">
                 <div class="invalid-feedback">* Please input your username</div>
                 <div id="takenName" class="d-none text-danger validation-info">* This username is already taken</div>
+                <div id="invalidUserName" class="d-none text-danger validation-info">* The username may only contain digits and letters</div>
             </div>
             <div class="form-group was-validated">
                 <input class="form-control" type="password" name="password" id="password" placeholder="password" required maxlength="16" minlength="8">
-                <div class="invalid-feedback">* Your password is too short</div>
+                <div class="invalid-feedback">* Your password must be 8 - 16 digits</div>
             </div>
             <div class="form-group was-validated">
                 <input class="form-control" type="password" name="password" id="repeatPassword" placeholder="repeat password"
@@ -36,9 +36,15 @@
 <script>
     document.getElementById("userName").addEventListener("input", async () => {
         const userName = document.getElementById("userName").value;
+        if (!/^[a-zA-Z0-9]+$/.test(userName) && userName.length > 0) {
+            document.getElementById("invalidUserName").classList.remove("d-none");
+            document.getElementById("signUp").disabled = true;
+        } else {
+            document.getElementById("invalidUserName").classList.add("d-none");
+            document.getElementById("signUp").disabled = false;
+        }
         const result = await validateUserName(userName, null);
         if (!result) {
-            console.log("already taken");
             document.getElementById("takenName").classList.remove("d-none");
             document.getElementById("signUp").disabled = true;
         } else {

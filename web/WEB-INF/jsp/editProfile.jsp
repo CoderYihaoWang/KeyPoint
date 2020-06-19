@@ -29,13 +29,20 @@
             const originalUserName = document.getElementById("userName").value;
             document.getElementById("userName").addEventListener("input", async () => {
                 const userName = document.getElementById("userName").value;
+                if (!/^[a-zA-Z0-9]+$/.test(userName) && userName.length > 0) {
+                    document.getElementById("invalidUserName").classList.remove("d-none");
+                    document.getElementById("signUp").disabled = true;
+                } else {
+                    document.getElementById("invalidUserName").classList.add("d-none");
+                    document.getElementById("signUp").disabled = false;
+                }
                 const result = await validateUserName(userName, originalUserName);
                 if (!result) {
                     document.getElementById("takenName").classList.remove("d-none");
-                    document.getElementById("save").disabled = true;
+                    document.getElementById("signUp").disabled = true;
                 } else {
                     document.getElementById("takenName").classList.add("d-none");
-                    document.getElementById("save").disabled = false;
+                    document.getElementById("signUp").disabled = false;
                 }
             });
 
@@ -146,7 +153,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary px-3" data-dismiss="modal">Cancel
                                     </button>
-                                    <button type="button" class="btn btn-primary px-3" id="btnDecide">Okey</button>
+                                    <button type="button" class="btn btn-primary px-3" id="btnDecide">Okay</button>
                                 </div>
                             </div>
                         </div>
@@ -177,10 +184,12 @@
             <!-- left part in the form -->
             <div id="leftBlock" class=" col-md-8 ">
                 <input id="id" type="hidden" name="id" value="${user.id}">
+                <input id="originalUserName" type="hidden" name="originalUserName" value="${user.userName}">
                 <div class="form-group">
                     <input id="userName" type="text" name="userName" value="${user.userName}" placeholder="user name"
                            class="form-control" required maxlength="16">
                     <div id="takenName" class="d-none text-danger">* This username is already taken</div>
+                    <div id="invalidUserName" class="d-none text-danger validation-info">* The username may only contain digits and letters</div>
                 </div>
                 <div class="form-group">
                     <input id="nickname" type="text" name="nickname" value="${user.nickname}" placeholder="nickname"
@@ -228,7 +237,7 @@
             <button type="submit" form="profileForm" class="btn btn-primary mr-2 px-3 btn-sm" id="save">Save</button>
             <input type="hidden" name="userName" value="${user.userName}">
             <button type="button" class="btn btn-danger mr-2 px-3 btn-sm" data-toggle="modal"
-                    data-target="#modalDeleteAccount">Delete account
+                    data-target="#modalDeleteAccount">Delete Account
             </button>
             <!-- Modal -->
             <div class="modal fade" id="modalDeleteAccount" data-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -243,11 +252,11 @@
                         </div>
                         <div class="modal-body border">
                             <p>Are you sure to delete this user <i>${user.userName}</i>?</p>
-                            <p>This action can NOT be undone.</p>
+                            <p>This action CANNOT be undone.</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary px-3" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary px-3">delete any way</button>
+                            <button type="submit" class="btn btn-primary px-3">Delete anyway</button>
                         </div>
                     </div>
                 </div>

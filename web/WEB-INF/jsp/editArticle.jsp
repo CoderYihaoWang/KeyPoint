@@ -125,7 +125,7 @@
         </div>
         <div class="form-group my-2">
             <label for="content" class="text-muted">Content</label>
-            <textarea id="content" name="content" required>${article.content}</textarea>
+            <textarea id="content" name="content">${article.content}</textarea>
         </div>
     </form>
 

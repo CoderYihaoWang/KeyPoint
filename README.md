@@ -13,7 +13,7 @@ https://trex-sandwich.com/taz_KeyPoint/
 
 #### Extra Features
 - Nested comments (in "article" page)
-  - nested up to 3 levels.
+  - nested up to 2 levels.
   - auto indented in accordance with their levels. 
   - arranged in chronological order (later goes upper).
   - user can choose to show or hide comments block.

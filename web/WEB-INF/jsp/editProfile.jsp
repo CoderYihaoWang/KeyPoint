@@ -177,6 +177,7 @@
             <!-- left part in the form -->
             <div id="leftBlock" class=" col-md-8 ">
                 <input id="id" type="hidden" name="id" value="${user.id}">
+                <input id="originalUserName" type="hidden" name="originalUserName" value="${user.userName}">
                 <div class="form-group">
                     <input id="userName" type="text" name="userName" value="${user.userName}" placeholder="user name"
                            class="form-control" required maxlength="16">

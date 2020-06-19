@@ -37,5 +37,8 @@ https://trex-sandwich.com/taz_KeyPoint/
 - If you run initSchema.sql BEFORE the presentation date, please contact one of our group members, as we need to add sample data for presentation
 
 #### Accounts for testing and evaluation
-- Test account - username: Kalvin, password: kkkkkkkk
+
 - Database account: user=taz, password=PutsTheTazInTazmania
+- Test accounts
+  - username: Kalvin, password: 12341234
+  - username: user1, password: 12341234

@@ -146,7 +146,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary px-3" data-dismiss="modal">Cancel
                                     </button>
-                                    <button type="button" class="btn btn-primary px-3" id="btnDecide">Okey</button>
+                                    <button type="button" class="btn btn-primary px-3" id="btnDecide">Okay</button>
                                 </div>
                             </div>
                         </div>
@@ -228,7 +228,7 @@
             <button type="submit" form="profileForm" class="btn btn-primary mr-2 px-3 btn-sm" id="save">Save</button>
             <input type="hidden" name="userName" value="${user.userName}">
             <button type="button" class="btn btn-danger mr-2 px-3 btn-sm" data-toggle="modal"
-                    data-target="#modalDeleteAccount">Delete account
+                    data-target="#modalDeleteAccount">Delete Account
             </button>
             <!-- Modal -->
             <div class="modal fade" id="modalDeleteAccount" data-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -243,11 +243,11 @@
                         </div>
                         <div class="modal-body border">
                             <p>Are you sure to delete this user <i>${user.userName}</i>?</p>
-                            <p>This action can NOT be undone.</p>
+                            <p>This action CANNOT be undone.</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary px-3" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary px-3">delete any way</button>
+                            <button type="submit" class="btn btn-primary px-3">Delete anyway</button>
                         </div>
                     </div>
                 </div>

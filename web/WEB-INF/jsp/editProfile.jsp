@@ -29,13 +29,20 @@
             const originalUserName = document.getElementById("userName").value;
             document.getElementById("userName").addEventListener("input", async () => {
                 const userName = document.getElementById("userName").value;
+                if (!/^[a-zA-Z0-9]+$/.test(userName) && userName.length > 0) {
+                    document.getElementById("invalidUserName").classList.remove("d-none");
+                    document.getElementById("signUp").disabled = true;
+                } else {
+                    document.getElementById("invalidUserName").classList.add("d-none");
+                    document.getElementById("signUp").disabled = false;
+                }
                 const result = await validateUserName(userName, originalUserName);
                 if (!result) {
                     document.getElementById("takenName").classList.remove("d-none");
-                    document.getElementById("save").disabled = true;
+                    document.getElementById("signUp").disabled = true;
                 } else {
                     document.getElementById("takenName").classList.add("d-none");
-                    document.getElementById("save").disabled = false;
+                    document.getElementById("signUp").disabled = false;
                 }
             });
 
@@ -182,6 +189,7 @@
                     <input id="userName" type="text" name="userName" value="${user.userName}" placeholder="user name"
                            class="form-control" required maxlength="16">
                     <div id="takenName" class="d-none text-danger">* This username is already taken</div>
+                    <div id="invalidUserName" class="d-none text-danger validation-info">* The username may only contain digits and letters</div>
                 </div>
                 <div class="form-group">
                     <input id="nickname" type="text" name="nickname" value="${user.nickname}" placeholder="nickname"

@@ -39,9 +39,11 @@ public class SaveProfile extends FileUploadBase {
 
         User user = new User();
         String userName = "";
+        String originalUserName = "";
         String originalAvatar = "";
         String defaultAvatar = "";
         boolean avatarFileUploaded = false;
+        boolean userNameChanged = false;
 
         try {
             List<FileItem> fileItems = upload.parseRequest(req);
@@ -53,11 +55,15 @@ public class SaveProfile extends FileUploadBase {
                     String fieldValue = item.getString();
                     if (fieldName.equals("userName")) {
                         userName = fieldValue;
+                        userNameChanged = true;
                     } else if (fieldName.equals("originalAvatar")) {
                         originalAvatar = fieldValue;
                         continue;
                     } else if (fieldName.equals("defaultAvatar")) {
                         defaultAvatar = fieldValue;
+                        continue;
+                    } else if (fieldName.equals("originalUserName")) {
+                        originalUserName = fieldValue;
                         continue;
                     }
                     user.setField(fieldName, fieldValue);
@@ -79,7 +85,11 @@ public class SaveProfile extends FileUploadBase {
             user.setAvatar(defaultAvatar);
         }
 
-        if (user.getNickname() == null || user.getNickname().isEmpty()) {
+        if (user.getUserName() == null || user.getUserName().isEmpty() || user.getUserName().isBlank()) {
+            user.setUserName(originalUserName);
+        }
+
+        if (user.getNickname() == null || user.getNickname().isEmpty() || user.getNickname().isBlank()) {
             user.setNickname(user.getUserName());
         }
 
@@ -89,6 +99,10 @@ public class SaveProfile extends FileUploadBase {
             e.printStackTrace();
         }
 
-        resp.sendRedirect("./articlesPage?userName=" + userName);
+        if (userNameChanged) {
+            resp.sendRedirect("./signOut");
+        } else {
+            resp.sendRedirect("./articlesPage?userName=" + userName);
+        }
     }
 }

@@ -38,11 +38,11 @@ public class SaveProfile extends FileUploadBase {
         ServletFileUpload upload = new ServletFileUpload(factory);
 
         User user = new User();
+        String userName = "";
         String originalUserName = "";
         String originalAvatar = "";
         String defaultAvatar = "";
         boolean avatarFileUploaded = false;
-        boolean userNameChanged = false;
 
         try {
             List<FileItem> fileItems = upload.parseRequest(req);
@@ -53,7 +53,7 @@ public class SaveProfile extends FileUploadBase {
                     String fieldName = item.getFieldName();
                     String fieldValue = item.getString();
                     if (fieldName.equals("userName")) {
-                        userNameChanged = true;
+                        userName = fieldValue;
                     } else if (fieldName.equals("originalAvatar")) {
                         originalAvatar = fieldValue;
                         continue;
@@ -97,7 +97,7 @@ public class SaveProfile extends FileUploadBase {
             e.printStackTrace();
         }
 
-        if (userNameChanged) {
+        if (!userName.equals(originalUserName)) {
             resp.sendRedirect("./signOut");
         } else {
             resp.sendRedirect("./articlesPage?userName=" + user.getUserName());

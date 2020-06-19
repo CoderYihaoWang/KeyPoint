@@ -40,6 +40,5 @@ https://trex-sandwich.com/taz_KeyPoint/
 
 - Database account: user=taz, password=PutsTheTazInTazmania
 - Test accounts
-  - username: Kalvin, password: kkkkkkkk
+  - username: Kalvin, password: 12341234
   - username: user1, password: 12341234
-  - username: user2, password: 12341234

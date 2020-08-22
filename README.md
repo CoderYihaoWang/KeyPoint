@@ -1,44 +1,57 @@
-# KeyPoint: a blog
+# KeyPoint
 
-#### Team name
-- The KEY
+## Introduction
+- [KeyPoint](https://trex-sandwich.com/taz_KeyPoint/) is a blog website, where you can share your points with others by posting articles. This website supports account creation and management, commenting on articles and on other comments, liking articles and following authors, attaching tags to articles and browsing articles by tags, and more. This project is currently deployed on https://trex-sandwich.com/taz_KeyPoint/ . It is the final project for the PGCIT program of University of Auckland. My co-authors are Kalvin Wei and Esther Zhang.
 
-#### Members:
-- Kalvin Wei
-- Esther Zhang
-- Yihao Wang
+## Tech Stack
+  - **Database**: MariaDB
+  - **Backend**: java - Servlets, DAO, JSP
+  - **Frontend**: Bootstrap, jQuery, AJAX (HTML, CSS, JavaScript)
 
-#### Website
-https://trex-sandwich.com/taz_KeyPoint/
-
-#### Extra Features
-- Nested comments (in "article" page)
-  - nested up to 2 levels.
-  - auto indented in accordance with their levels. 
-  - arranged in chronological order (later goes upper).
-  - user can choose to show or hide comments block.
-  - essential info about comments included.
-- WYSIWYG editor (in "edit article" page)
-  - font weights used to denote title, subtitle and others levels
-  - text can be in bold, italic, strikethrough, underlined and containing links.
-  - content correctly displayed in correspondent pages.
-- Follow authors
-  - users can easily access an author's page via their "I followed" page.
-  - authors can get an idea of how popular they are
-- Like articles and comments
-  - liked articles are gathered in "I liked" page.
-  - likes show the popularity of articles and comments besides them.
-- Tags
-  - attach tags to articles
-  - browse articles with a certain tag
+## Features
+  - Browse and read articles
+    ![](./screenshots/browseArticles.gif)
+  - Read or hide comments
+    ![](./screenshots/toggleCommentDisplay.gif)
+  - View all articles by an authors
+    ![](./screenshots/viewAuthors.gif)
+  - Personal blog page
+    ![](./screenshots/personalBlogPage.gif)
+  - Account creation
+    ![](./screenshots/createAccount.gif)
+    ![](./screenshots/userNameAndPassword.gif)
+  - Edit personal profile
+    ![](./screenshots/editProfile.gif)
+  - Select or upload avatars
+    ![](./screenshots/avatars.gif)
+  - Create posts
+    ![](./screenshots/createArticles.gif)
+  - Attach cover images to your posts
+    ![](./screenshots/cover.gif)
+  - 'What you see is what you get' editor
+    ![](./screenshots/WYSIWYG.gif)
+  - Make comments
+    ![](./screenshots/comments.gif)
+  - Delete comments
+    ![](./screenshots/deleteComment.gif)
+  - Delete articles
+    ![](./screenshots/deleteArticle.gif)
+  - Delete account
+    ![](./screenshots/deleteAccount.gif)
+  - Filter articles by tags
+    ![](./screenshots/filterArticlesByTags.gif)
+  - Like articles
+    ![](./screenshots/likeArticles.gif)
+  - Browse the articles that you have liked
+    ![](./screenshots/browseArticlesByLikes.gif)
+  - Follow authors
+    ![](./screenshots/followAuthors.gif)
+  - Browse your followers and authors you have followed
+    ![](./screenshots/follows.gif)
+  - Responsiveness on mobile devices
+    ![](./screenshots/responsiveness.gif)
+  - Prevention against XSS
+    ![](./screenshots/preventXSS.gif)
   
-#### On setup
-- If you choose to deploy the project yourself, rather than user the already deployed version, run /scripts/initSchema.sql first
-- If you run initSchema.sql BEFORE the presentation date, please contact one of our group members, as we need to add sample data for presentation
-
-#### Accounts for testing and evaluation
-
-- Database account: user=taz, password=PutsTheTazInTazmania
-- Test accounts
-  - username: Kalvin, password: 12341234
-  - username: user1, password: 12341234
+#### Notes on Deployment
+- Run run `/scripts/initSchema.sql` first to initialize the database

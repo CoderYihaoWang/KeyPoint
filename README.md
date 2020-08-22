@@ -17,7 +17,7 @@
 
     ![](./screenshots/toggleCommentDisplay.gif)
 
-  - View all articles by an authors
+  - View all articles by an author
 
     ![](./screenshots/viewAuthors.gif)
 
@@ -45,7 +45,7 @@
 
   - Attach cover images to your posts
 
-    ![](./screenshots/cover.gif)
+    ![](./screenshots/covers.gif)
 
   - 'What you see is what you get' editor
 

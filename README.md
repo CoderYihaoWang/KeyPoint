@@ -10,48 +10,91 @@
 
 ## Features
   - Browse and read articles
+
     ![](./screenshots/browseArticles.gif)
+
   - Read or hide comments
+
     ![](./screenshots/toggleCommentDisplay.gif)
+
   - View all articles by an authors
+
     ![](./screenshots/viewAuthors.gif)
+
   - Personal blog page
+
     ![](./screenshots/personalBlogPage.gif)
+
   - Account creation
+
     ![](./screenshots/createAccount.gif)
+
     ![](./screenshots/userNameAndPassword.gif)
+
   - Edit personal profile
+
     ![](./screenshots/editProfile.gif)
+
   - Select or upload avatars
+
     ![](./screenshots/avatars.gif)
+
   - Create posts
+
     ![](./screenshots/createArticles.gif)
+
   - Attach cover images to your posts
+
     ![](./screenshots/cover.gif)
+
   - 'What you see is what you get' editor
+
     ![](./screenshots/WYSIWYG.gif)
+
   - Make comments
+
     ![](./screenshots/comments.gif)
+
   - Delete comments
+
     ![](./screenshots/deleteComment.gif)
+
   - Delete articles
+
     ![](./screenshots/deleteArticle.gif)
+
   - Delete account
+
     ![](./screenshots/deleteAccount.gif)
+
   - Filter articles by tags
+
     ![](./screenshots/filterArticlesByTags.gif)
+
   - Like articles
+
     ![](./screenshots/likeArticles.gif)
+
   - Browse the articles that you have liked
-    ![](./screenshots/browseArticlesByLikes.gif)
+
+    ![](./screenshots/likedArticles.gif)
+
   - Follow authors
+
     ![](./screenshots/followAuthors.gif)
+
   - Browse your followers and authors you have followed
+
     ![](./screenshots/follows.gif)
+
   - Responsiveness on mobile devices
+
     ![](./screenshots/responsiveness.gif)
+
   - Prevention against XSS
+  
     ![](./screenshots/preventXSS.gif)
+
   
 #### Notes on Deployment
 - Run run `/scripts/initSchema.sql` first to initialize the database
